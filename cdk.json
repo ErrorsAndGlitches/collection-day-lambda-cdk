@@ -1,0 +1,38 @@
+{
+  "app": "npx ts-node --prefer-ts-exts bin/collection-day-lambda-cdk.ts",
+  "watch": {
+    "include": ["**"],
+    "exclude": [
+      "README.md",
+      "cdk*.json",
+      "**/*.d.ts",
+      "**/*.js",
+      "tsconfig.json",
+      "package*.json",
+      "node_modules",
+      "test"
+    ]
+  },
+  "context": {
+    "account": "REPLACE_WITH_ACCOUNT_ID",
+    "region": "us-west-2",
+    "connectionArn": "REPLACE_WITH_CODECONNECTIONS_ARN",
+    "cdkRepo": "ErrorsAndGlitches/collection-day-lambda-cdk",
+    "cdkBranch": "main",
+    "lambdaRepo": "ErrorsAndGlitches/collection-day-lambda",
+    "lambdaBranch": "master",
+    "ecrRepositoryName": "collection-day-lambda",
+    "address": "REPLACE_WITH_STREET_ADDRESS",
+    "phoneNumbers": "REPLACE_WITH_COMMA_SEPARATED_E164_NUMBERS",
+    "@aws-cdk/aws-lambda:recognizeLayerVersion": true,
+    "@aws-cdk/core:checkSecretUsage": true,
+    "@aws-cdk/core:target-partitions": ["aws", "aws-cn"],
+    "@aws-cdk/aws-iam:minimizePolicies": true,
+    "@aws-cdk/core:validateSnapshotRemovalPolicy": true,
+    "@aws-cdk/aws-ecr-assets:dockerIgnoreSupport": true,
+    "@aws-cdk/aws-s3:createDefaultLoggingPolicy": true,
+    "@aws-cdk/aws-ecs-patterns:removeDefaultDesiredCount": true,
+    "@aws-cdk/core:enablePartitionLiterals": true,
+    "@aws-cdk/aws-ecr-assets:validateDockerAssetsHash": true
+  }
+}
